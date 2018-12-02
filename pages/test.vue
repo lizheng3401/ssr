@@ -9,7 +9,13 @@
 </template>
  
 <script>
+import axios from 'axios'
 export default {
+    async asyncData() {
+        let data = await axios.get('/api/bins/rwyw2')
+        console.log(data[0])
+        return data
+    },
   name: "test",
   data() {
     return {
@@ -18,7 +24,7 @@ export default {
   },
   methods: {
       getData(){
-          for (let i = 0; i < 10000; i++) {
+          for (let i = 0; i < 1500; i++) {
               this.tableData.push({
                   date: "2018-11-28",
                   name: "vine",

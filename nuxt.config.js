@@ -2,7 +2,7 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
+  cache: true,
   /*
   ** Headers of the page
   */
@@ -17,7 +17,11 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
+  /* 缓存设置， 缓存组件的最大数目为1000，最大时长为900秒即15分钟 */
+  cache: {
+    max: 1000,
+    maxAge: 900000
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -49,8 +53,11 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    proxy: true,
   },
-
+  proxy: {
+    '/api': 'https://api.myjson.com/'
+  },
   /*
   ** Build configuration
   */
