@@ -46,7 +46,8 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
   /*
   ** Axios module configuration
@@ -55,8 +56,14 @@ module.exports = {
     // See https://github.com/nuxt-community/axios-module#options
     proxy: true,
   },
+
   proxy: {
-    '/api': 'https://api.myjson.com/'
+    '/api':{ 
+      target: 'http://localhost:8080/', // api主机
+      pathRewrite: { 
+        '^/api': '' 
+      }
+    }
   },
   /*
   ** Build configuration
