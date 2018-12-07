@@ -12,13 +12,17 @@
         :page-size="pageSize" :total="taskTotal"
         layout="total, sizes, prev, pager, next, jumper">
     </el-pagination>
-    
+    {{table[0]}}
   </div>
 </template>
  
 <script>
-import axios from 'axios'
+
 export default {
+    async asyncData ({app}) {
+        let {data} = await app.$axios.get("/api/test/json")
+        return {data.tableData}
+    },
     name: "test",
     data() {
         return {
