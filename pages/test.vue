@@ -12,7 +12,7 @@
         :page-size="pageSize" :total="taskTotal"
         layout="total, sizes, prev, pager, next, jumper">
     </el-pagination>
-    <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
+    
   </div>
 </template>
  
