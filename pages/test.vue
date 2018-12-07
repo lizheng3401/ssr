@@ -17,11 +17,11 @@
 </template>
  
 <script>
-
+import axios from 'axios'
 export default {
     async asyncData ({app}) {
-        let {data} = await app.$axios.get("/api/test/json")
-        return {data.tableData}
+        let {data} = await app.$axios.get("/api/test.json")
+        return {table: data}
     },
     name: "test",
     data() {
@@ -79,8 +79,8 @@ export default {
         },
     },
     created(){
-        this.getData()
-        console.log(this.caseTable[0])
+        // this.getData()
+        // console.log(this.caseTable[0])
     }
 };
 </script>
