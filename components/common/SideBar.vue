@@ -55,6 +55,11 @@
             title: 'APK包分析'
           },
           {
+            icon: "el-icon-setting",
+            index: '/configuration',
+            title: "配置管理"
+          },
+          {
             icon: 'el-icon-edit-outline',
             index: '/test',
             title: 'test'

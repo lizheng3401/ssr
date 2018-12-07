@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <el-table :data="showCaseTable" style="width: 100%">
       <el-table-column prop="id" label="ID" width="50"></el-table-column>
       <el-table-column prop="date" label="日期" width="180"></el-table-column>
@@ -13,7 +12,7 @@
         :page-size="pageSize" :total="taskTotal"
         layout="total, sizes, prev, pager, next, jumper">
     </el-pagination>
-    
+    <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
   </div>
 </template>
  
